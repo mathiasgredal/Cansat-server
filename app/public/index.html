@@ -52,15 +52,18 @@
             </li>
           </ul>
           
-          <div class="tab-content" id="pills-tabContent" style="display: flex; flex: 1; height: 100%; align-items: stretch;">
-            <div class="tab-pane fade show active" id="temp" style="display: flex; flex: 1; height: 100%; align-items: stretch;" role="tabpanel">
-              <canvas id="myChart"></canvas>
+          <div class="tab-content" id="pills-tabContent" style="display: flex; flex: 1; height: 100%; align-items: stretch;background-color: white;">
+            <div class="tab-pane fade show active" id="temp" style="width: 100%;" role="tabpanel">
+              <canvas id="tempChart" style="display: flex; flex: 1;"></canvas>
             </div>
-            <div class="tab-pane fade" id="tryk" role="tabpanel">Tryk</div>
+            <div class="tab-pane fade" id="tryk" style="width: 100%;" role="tabpanel">
+              <canvas id="pressureChart" style="display: flex; flex: 1;"></canvas>
+            </div>
             <div class="tab-pane fade" id="højde" role="tabpanel">Højde</div>
-            <div class="tab-pane fade" id="accel" role="tabpanel">Accel</div>
+            <div class="tab-pane fade" id="accel" style="width: 100%;" role="tabpanel">
+              <canvas id="accelChart" style="display: flex; flex: 1;"></canvas>
+            </div>
             <div class="tab-pane fade" id="data" role="tabpanel">Data</div>
-
           </div>
         </div>
         <div class="item4 bg-dark">Kort</div>
@@ -74,6 +77,9 @@
     <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.8.2/dist/js/tabulator.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" integrity="sha512-oJp0DdQuQQrRsKVly+Ww6fAN1GwJN7d1bi8UubpEbzDUh84WrJ2CFPBnT4LqBCcfqTcHR5OGXFFhaPe3g1/bzQ==" crossorigin="anonymous"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/epoch/0.8.4/js/epoch.min.js" integrity="sha512-OQUukBdyDPDSyD0Bul5eNAdMKjOu1xTrK7oCnNnrdtHAx7BqH93ZXpwLMu91YICvfW3Sl/asx5xrVW1Jw38BPw==" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <script type="text/javascript" src="scripts/pressuregraph.js"></script>
+    <script type="text/javascript" src="scripts/tempgraph.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
 </body>
 </html>

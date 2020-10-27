@@ -131,7 +131,7 @@ body {
   grid-row: 1/1;
 }
 
-#temp {
+#temp, #tryk {
     background-color: white;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;

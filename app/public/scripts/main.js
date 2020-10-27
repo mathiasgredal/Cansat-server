@@ -1,3 +1,35 @@
+var tempGraph = createTemperatureChart("#tempChart");
+var pressureGraph = createPressureChart("#pressureChart");
+var accelGraph = createPressureChart("#pressureChart");
+
+var startUpdate = Date.now()/1000;
+var latestUpdate = startUpdate;
+
+var index = 0;
+
+setInterval(async ()=> {
+  var data = await (await fetch('/api/date?' + new URLSearchParams({
+      date: latestUpdate,
+  }))).json();
+  console.log(data)
+
+  var X_Time = Date.now()/1000-startUpdate;
+  tempGraph.data.datasets[0].data.push({x: X_Time, y: data[0].temperature});
+  pressureGraph.data.datasets[0].data.push({x: X_Time,y: data[0].pressure});
+
+  if(index > 50) {
+    tempGraph.data.datasets[0].data.shift();
+    pressureGraph.data.datasets[0].data.shift();
+  }
+
+  tempGraph.update();
+  pressureGraph.update();
+
+  latestUpdate = Date.now()/1000;
+  index++;
+}, 500);
+
+
 // var table = new Tabulator("#example-table", {
 //     reactiveData:true,
 //     height:605,
@@ -14,40 +46,3 @@
 //     const tableData = await (await fetch("/api/all")).json();
 //     table.setData(tableData);
 // }, 1000);
-
-var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-  // The type of chart we want to create
-  type: 'line',
-
-  // The data for our dataset
-  data: {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [0, 10, 5, 2, 20, 30, 45]
-    }]
-  },
-
-  // Configuration options go here
-  options: {
-    maintainAspectRatio: false,
-    legend: {
-      display: false
-    },
-    title: {
-      display: true,
-      text: "Temperaturgraf"
-    },
-    scales: {
-      yAxes: [{
-        scaleLabel: {
-          display: true,
-          labelString: 'Temperatur [°C]'
-        }
-      }]
-    }     
-  }
-});
