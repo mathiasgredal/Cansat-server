@@ -1,0 +1,26 @@
+{
+  "name": "get_data_eksempel",
+  "version": "1.0.0",
+  "description": "Node.js app using Express 4 and PostgreSQL",
+  "engines": {
+    "node": "12.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "mqtt": "^4.2.1",
+    "pg": "^8.3.3"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}

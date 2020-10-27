@@ -1,0 +1,163 @@
+/* body{
+    position: fixed;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 600px;
+  margin: auto;
+  width: 80%;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 1;
+
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+}
+
+.input {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row: 2;
+
+  padding: 20px;
+  background-color: red;
+}
+
+.output {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row: 2;
+
+  background-color: green;
+}
+
+thead {
+    font-weight: bold;
+    font-size: large;
+}
+
+tbody {
+  width: 100%;
+  float: left;
+  display: block;
+  overflow-y: scroll;
+  max-height: 550px;
+}
+
+tr {
+  float: left;
+  display: block;
+}
+td {
+  float: left;
+  display: block;
+}
+tr {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+td {
+    flex: 1;
+  float: left;
+}
+table {
+  width: 100%;
+} */
+body {
+  margin: 0;
+  background-color: lightcyan;
+}
+
+/* NEW */
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 8px;
+  padding: 8px; /* NEW */
+  height: calc(100vh - 58px);
+  background-color: #e8e8e8;
+}
+
+#pills-tab {
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.nav-pills .nav-link {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.wrapper>div {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 0px grey;
+  display: flex;
+  flex-direction: column;
+}
+
+.item1 {
+  grid-column: 1/3;
+  grid-row: 1/1;
+  justify-content: center;
+  align-items: center;
+}
+
+.item2 {
+  grid-column: 1/3;
+  grid-row: 2/2;
+  justify-content: center;
+  align-items: center;
+}
+
+.item3 {
+  grid-column: 3/5;
+  grid-row: 1/1;
+}
+
+#temp {
+    background-color: white;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+#pills-tabContent {
+  display: flex;
+}
+
+.item4 {
+  justify-content: center;
+  align-items: center;
+}
+
+.item5 {
+  justify-content: center;
+  align-items: center;
+}
+/* 
+
+.item7 {
+  grid-column: 3/4;
+  grid-row: 5/7;
+}
+
+.item8 {
+  grid-column: 4/5;
+  grid-row: 6/7;
+}*/

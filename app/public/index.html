@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://unpkg.com/tabulator-tables@4.8.2/dist/css/tabulator.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/epoch/0.8.4/css/epoch.min.css" integrity="sha512-vg5Y7XDOfPBY8A7drxCyYMoBGxqL/5cvxfBuUgqcfvz6y8q7/rLT+LpxVxbljx33aNZwH4BbiQIO8zgtvCCkUQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles/style.css">
+    
+    <title>Lønningssystem</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" style="font-weight: bold;" href="#">CanSat</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ny session</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vælg session</a>
+            </li>
+            
+          </ul>
+        </div>
+    </nav>
+
+    <!-- Main ui content -->
+    <div class="wrapper bg-light text-white">
+        <div class="item1 bg-dark">Video Feed</div>
+        <div class="item2 bg-dark">Opportunity area</div>
+        <div class="item3 bg-dark">
+          <ul class="nav nav-pills bg-info" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active text-light" id="pills-home-tab" data-toggle="pill" href="#temp" role="tab">Temp. graf</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" id="pills-profile-tab" data-toggle="pill" href="#tryk" role="tab">Tryk graf</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" id="pills-contact-tab" data-toggle="pill" href="#højde" role="tab">Højde graf</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" id="pills-contact-tab" data-toggle="pill" href="#accel" role="tab">Accel. graf</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" id="pills-contact-tab" data-toggle="pill" href="#data" role="tab">Data</a>
+            </li>
+          </ul>
+          
+          <div class="tab-content" id="pills-tabContent" style="display: flex; flex: 1; height: 100%; align-items: stretch;">
+            <div class="tab-pane fade show active" id="temp" style="display: flex; flex: 1; height: 100%; align-items: stretch;" role="tabpanel">
+              <canvas id="myChart"></canvas>
+            </div>
+            <div class="tab-pane fade" id="tryk" role="tabpanel">Tryk</div>
+            <div class="tab-pane fade" id="højde" role="tabpanel">Højde</div>
+            <div class="tab-pane fade" id="accel" role="tabpanel">Accel</div>
+            <div class="tab-pane fade" id="data" role="tabpanel">Data</div>
+
+          </div>
+        </div>
+        <div class="item4 bg-dark">Kort</div>
+        <div class="item5 bg-dark">Telemetri</div>
+
+      </div>
+    </main>    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.8.2/dist/js/tabulator.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" integrity="sha512-oJp0DdQuQQrRsKVly+Ww6fAN1GwJN7d1bi8UubpEbzDUh84WrJ2CFPBnT4LqBCcfqTcHR5OGXFFhaPe3g1/bzQ==" crossorigin="anonymous"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/epoch/0.8.4/js/epoch.min.js" integrity="sha512-OQUukBdyDPDSyD0Bul5eNAdMKjOu1xTrK7oCnNnrdtHAx7BqH93ZXpwLMu91YICvfW3Sl/asx5xrVW1Jw38BPw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+</body>
+</html>

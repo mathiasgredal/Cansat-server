@@ -1,0 +1,52 @@
+version: '2.2'
+
+networks:
+  t2_proxy:
+    external:
+      name: t2_proxy
+  teknik-database:
+    driver: bridge
+
+services:
+  teknik-server:
+    image: "node:14"
+    container_name: teknik-server
+    restart: always
+    links:
+      - db
+    networks:
+      - teknik-database
+      - t2_proxy
+    ports:
+      - 8128:3000
+    volumes:
+      - ./app:/app
+    user: "node"
+    working_dir: /app
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=db
+      - DB_USER=postgres
+      - DB_PASS=example
+      - PORT=3000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.teknik.rule=Host(`teknik.gred.al`)"
+      - "traefik.http.routers.teknik.entrypoints=websecure"
+      - 'traefik.http.routers.teknik.tls=true'
+      - "traefik.http.routers.teknik.tls.certresolver=dns-cloudflare"
+
+  db:
+    image: postgres
+    restart: always
+    networks:
+      - teknik-database
+    expose:
+      - 5432
+    volumes:
+      - /db
+    environment:
+      POSTGRES_PASSWORD: example
+      PGDATA: /db
+      TZ: 'GMT+1'
+      PGTZ: 'GMT+1'
