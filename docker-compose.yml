@@ -20,9 +20,10 @@ services:
     ports:
       - 8128:3000
     volumes:
-      - ./app:/app
+      - ./:/app
     user: "node"
     working_dir: /app
+    command: npx nodemon index.js
     environment:
       - NODE_ENV=production
       - DATABASE_URL=db

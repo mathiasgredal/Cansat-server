@@ -2,7 +2,7 @@ var mqtt = require('mqtt');
 const { Pool } = require("pg");
 
 const pool = new Pool({
-    host: process.env.DB_HOST,
+    host: process.env.DATABASE_URL,
     user: process.env.DB_USER,
     password: process.env.DB_PASS
 });

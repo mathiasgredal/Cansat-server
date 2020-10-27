@@ -3,9 +3,9 @@ const router = express.Router();
 const { Pool } = require("pg");
 
 const pool = new Pool({
-    host: "localhost",
-    user: "postgres",
-    password: "example"
+    host: process.env.DATABASE_URL,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS
 });
 
 router.get("/date", async (req, res) => {
