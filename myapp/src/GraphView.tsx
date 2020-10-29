@@ -2,63 +2,74 @@ import * as React from "react";
 import { Component } from "react";
 import { Nav } from "react-bootstrap";
 
-export interface GraphProps {
-    
-}
- 
-export interface GraphState {
-    
-}
- 
-export class Graph extends React.Component<GraphProps, GraphState> {
-    constructor(props: GraphProps) {
-        super(props);
-        this.state = { test: 1 };
-    }
-    render() { 
-        return ( <div>test</div> );
-    }
-}
- 
+export interface GraphPanelProps {}
 
+export interface GraphPanelState {
+  selected: string;
+  views: { key: string; name: string; view: React.ReactNode }[];
+}
 
-export class GraphPanel extends React.Component {
+export class GraphPanel extends React.Component<
+  GraphPanelProps,
+  GraphPanelState
+> {
   constructor(props: any) {
     super(props);
-    this.state = { test: 1 };
+    let theviews: GraphPanelState["views"] = [];
     React.Children.forEach(this.props.children, (child: React.ReactNode) => {
-        // Simple typecasting
-        let elem = child as React.DetailedReactHTMLElement<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+      // Simple typecasting
+      let elem = child as React.DetailedReactHTMLElement<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      >;
+      theviews.push({
+        key: String(Math.floor(Math.random() * 10000)), // Generate random id
+        name: elem.props.title as string,
+        view: elem,
+      });
+    });
 
-        console.log(elem.props);
-    })
+    this.state = {
+      selected: theviews[0].key,
+      views: theviews,
+    };
   }
   render() {
     return (
       <>
-        <Nav variant="pills" defaultActiveKey="/home">
-          <Nav.Item>
-            <Nav.Link href="/home">Active</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="link-1">Option 2</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="disabled" disabled>
-              Disabled
-            </Nav.Link>
-          </Nav.Item>
+        {/* Add all nav tabs */}
+        <Nav variant="pills" defaultActiveKey={this.state.views[0].key}>
+          {this.state.views.map((view) => (
+            <Nav.Item>
+              <Nav.Link
+                eventKey={view.key}
+                onClick={() => this.setState({ selected: view.key })}
+              >
+                {view.name}
+              </Nav.Link>
+            </Nav.Item>
+          ))}
         </Nav>
+
+        {/* Show content of selected tab*/}
         <div
           style={{
             display: "flex",
             flex: 1,
             height: "100%",
-            width: "100%",
-            backgroundColor: "green",
+            alignItems: "stretch",
           }}
         >
-          dasd
+          {this.state.views.map((view) => (
+            <div
+              style={{
+                display: view.key === this.state.selected ? "flex" : "none",
+                width: "100%",
+              }}
+            >
+              {view.view}
+            </div>
+          ))}
         </div>
       </>
     );
