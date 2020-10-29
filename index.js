@@ -10,17 +10,19 @@ const app = express()
 const api = require("./src/api")
 const mqtt = require("./src/mqtt")
 
+
+app.use(express.static('./myapp/dist'))
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
-app.use(express.static('my-app/build'))
 app.use("/api", api)
 
 
 app.listen(process.env.PORT, () => {
     console.log(`Run at http://teknik.gred.al`)
 })
+
 
 function createTables() {
     const pool = new Pool({

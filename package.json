@@ -2,9 +2,6 @@
   "name": "get_data_eksempel",
   "version": "1.0.0",
   "description": "Node.js app using Express 4 and PostgreSQL",
-  "engines": {
-    "node": "12.x"
-  },
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -12,15 +9,14 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
-    "ejs": "^2.5.6",
-    "express": "^4.15.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "mqtt": "^4.2.1",
-    "pg": "^8.3.3"
+    "path-match": "^1.2.4",
+    "pg": "^8.3.3",
+    "next": "10.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
   "license": "MIT"
 }
