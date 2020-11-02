@@ -23,7 +23,7 @@ export class GraphPanel extends React.Component<
         HTMLElement
       >;
       theviews.push({
-        key: String(Math.floor(Math.random() * 10000)), // Generate random id
+        key: String(Math.floor(Math.random() * 1000000)), // Generate random id
         name: elem.props.title as string,
         view: elem,
       });

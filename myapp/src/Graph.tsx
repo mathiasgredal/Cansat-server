@@ -1,7 +1,10 @@
 import * as React from "react";
 import { Component } from "react";
 import { Nav } from "react-bootstrap";
-import { Line } from "react-chartjs-2";
+import { Line } from 'react-chartjs-2';
+import 'chartjs-plugin-zoom';
+import Hammer from "hammerjs";
+
 
 export interface GraphProps {
   title: string;
@@ -84,6 +87,17 @@ export class Graph extends React.Component<GraphProps, GraphState> {
                   },
                 ],
               },
+              plugins: {
+                zoom: {
+                    pan: {
+                        mode: 'xy'
+                    },
+                    zoom: {
+                        mode: 'xy',
+                    }
+                }
+            }
+
             }}
           />
         </div>

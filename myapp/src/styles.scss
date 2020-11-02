@@ -4,6 +4,37 @@ $greyple: #99AAB5;
 $dark: #2C2F33;
 $darker: #2C2F33;
 $black: #000000;
+$button: #007bff;
+
+.sessionList {
+  width: 100%;
+  background-color: $full_white;
+  position: relative;
+  overflow: auto;
+  max-height: 30vh;
+}
+
+.button {
+  border: none;
+  outline: none;
+  width: max-content;
+  height: max-content;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 3px;
+  background-color: $button;
+  color: #FFFFFF;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: medium;
+}
+
+canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
 
 .Container {
   display: grid;
