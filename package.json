@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node index.js"
   },
+  "nodemonConfig": {
+    "ignore": ["myapp/*"]
+},
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",

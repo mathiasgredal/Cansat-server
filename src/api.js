@@ -8,6 +8,71 @@ const pool = new Pool({
     password: process.env.DB_PASS
 });
 
+global.session = Math.floor(Math.random()*10000000)
+
+router.get("/newsession", async (req, res) => {
+    try {
+        global.session = Math.floor(Math.random()*10000000)
+        res.send(`${global.session}`);
+    } catch (err) {
+        // Report errors
+        console.error(err);
+        res.send("Error " + err); 
+    }
+});
+
+router.get("/session", async (req, res) => {
+    try {
+        res.send(`${global.session}`);
+    } catch (err) {
+        // Report errors
+        console.error(err);
+        res.send("Error " + err); 
+    }
+});
+
+router.get("/sessions", async (req, res) => {
+    try {
+        // Wait for DB connectionconst 
+        client = await pool.connect();
+        // Run query
+        const result = await client.query("SELECT session, MIN(date) FROM sensordata GROUP BY session;");
+        // Respond with DB results as json
+        if (result)
+            res.send(JSON.stringify(result.rows, null, 2));
+        else
+            res.json(null);
+        // Release connection        
+        client.release();
+    } catch (err) {
+        // Report errors
+        console.error(err);
+        res.send("Error " + err); 
+    }
+});
+
+router.get("/allfromsession", async (req, res) => {
+    try {
+        // Wait for DB connectionconst 
+        client = await pool.connect();
+        // Run query
+        const result = await client.query("SELECT * FROM sensordata WHERE session = $1", [
+            req.query.session
+        ]);
+        // Respond with DB results as json
+        if (result)
+            res.send(JSON.stringify(result.rows, null, 2));
+        else
+            res.json(null);
+        // Release connection        
+        client.release();
+    } catch (err) {
+        // Report errors
+        console.error(err);
+        res.send("Error " + err);
+    }
+});
+
 router.get("/date", async (req, res) => {
     try {
         // Wait for DB connectionconst 

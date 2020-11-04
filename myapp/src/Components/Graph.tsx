@@ -30,13 +30,14 @@ export class Graph extends React.Component<GraphProps, GraphState> {
     };
 
     for(let graph of this.props.graphs) {
+      const graphColor = '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
       this.state.data.datasets.push({
-              label: graph,
-              backgroundColor: "#ff0000",
-              borderColor: "#ff0000",
-              fill: false,
-              data: [],
-            })
+          label: graph,
+          backgroundColor: graphColor,
+          borderColor: graphColor,
+          fill: false,
+          data: [],
+      })
     }
 
     this.startUpdate = Date.now();    
@@ -90,10 +91,10 @@ export class Graph extends React.Component<GraphProps, GraphState> {
               plugins: {
                 zoom: {
                     pan: {
-                        mode: 'xy'
+                        mode: 'x'
                     },
                     zoom: {
-                        mode: 'xy',
+                        mode: 'x',
                     }
                 }
             }

@@ -8,9 +8,14 @@
         "module": "es6",
         "esModuleInterop": true,
         "moduleResolution": "node",
+        "experimentalDecorators": true,
         "target": "es5",
         "allowJs": true,
         "jsx": "react",
+        "lib": [
+            "es2017",
+            "dom"
+        ]
     },
     "include": [
         "./src/**/*"

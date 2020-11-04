@@ -43,8 +43,8 @@ async function handleTelemetry(data) {
         const accelZ = data.accelZ;
 
 
-        const result = await db_client.query("INSERT INTO sensordata (temperature, pressure, accelX, accelY, accelZ) VALUES ($1, $2, $3, $4, $5)", 
-        [temperature, pressure, accelX, accelY, accelZ]);
+        const result = await db_client.query("INSERT INTO sensordata (session, temperature, pressure, accelX, accelY, accelZ) VALUES ($1, $2, $3, $4, $5, $6)", 
+        [global.session, temperature, pressure, accelX, accelY, accelZ]);
 
         db_client.release();
     } catch (error) {

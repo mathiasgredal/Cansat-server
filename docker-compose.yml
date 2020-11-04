@@ -49,5 +49,5 @@ services:
     environment:
       POSTGRES_PASSWORD: example
       PGDATA: /db
-      TZ: 'GMT+1'
-      PGTZ: 'GMT+1'
+      TZ: 'UTC'
+      PGTZ: 'UTC'

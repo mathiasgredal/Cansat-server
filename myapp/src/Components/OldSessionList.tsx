@@ -11,6 +11,9 @@ import {
 } from "@material-ui/core";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import dateFormat from "dateformat";
+import { inject, observer } from "mobx-react";
+import DataStore from "../Stores/DataStore";
+import { observable } from "mobx";
 
 export interface Session {
   start: Date;
@@ -19,43 +22,28 @@ export interface Session {
 
 export interface Props {
     onSelectSession: (session: Session) => void;
+    data?: DataStore;
 }
 
-export interface State {
-  sessions: Session[];
-}
+@inject('data')
+@observer 
+class OldSessionList extends React.Component<Props> {
+  @observable sessions: Session[] = [];
 
-class OldSessionList extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {
-      sessions: [
-        { start: new Date(), id: 1 },
-        { start: new Date(), id: 2 },
-        { start: new Date(), id: 3 },
-        { start: new Date(), id: 4 },
-        { start: new Date(), id: 5 },
-        { start: new Date(), id: 6 },
-        { start: new Date(), id: 7 },
-        { start: new Date(), id: 8 },
-        { start: new Date(), id: 9 },
-      ],
-    };
+
   }
 
-  // Fetch the session list
-  async componentDidMount() {
-    try {
-    } catch (err) {
-      console.log(err);
-    }
+  async componentWillMount() {
+    this.sessions = await this.props.data!.FetchSessionList();
   }
 
   render() {
     return (
       <>
         <List className="sessionList">
-          {this.state.sessions.map((value: Session) => {
+          {this.sessions.map((value: Session) => {
             const labelId = `checkbox-list-label-${value.id}`;
 
             return (
@@ -67,7 +55,7 @@ class OldSessionList extends React.Component<Props, State> {
                   button
                   onClick={() => 
                     this.props.onSelectSession(
-                      this.state.sessions.filter(
+                      this.sessions.filter(
                         (elem) => elem.id == value.id
                       )[0]
                     )
