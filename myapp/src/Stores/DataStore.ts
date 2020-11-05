@@ -31,7 +31,6 @@ export default class DataStore {
   }
  
   @observable viewState: ViewState = ViewState.Recording;
-  @observable currentSession: number = -1;
 
   // Handle modals
   @observable newSessionModal: boolean = false;

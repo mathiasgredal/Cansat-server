@@ -6,6 +6,13 @@ $darker: #2C2F33;
 $black: #000000;
 $button: #007bff;
 
+.DataTable {
+  height: calc(40vh); // This is cancer
+  width: 100%;
+  margin: 0 !important;
+  border-radius: 3px;
+}
+
 .sessionList {
   width: 100%;
   background-color: $full_white;

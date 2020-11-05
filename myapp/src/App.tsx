@@ -14,6 +14,9 @@ import { Graph } from './Components/Graph'
 import Modal from './Components/Modal'
 import OldSessionList, { Session } from './Components/OldSessionList'
 import DataStore, { SensorData, ViewState } from './Stores/DataStore'
+import Table from './Components/Table'
+
+
 
 interface Props {
     data: DataStore
@@ -38,7 +41,7 @@ class App extends React.Component<Props> {
 
             // This fetches the data and has an unfortunate sideeffect of updating the graphs
             await this.props.data.FetchSensorData()
-        }, 500)
+        }, 100)
     }
 
     // prettier-ignore
@@ -67,8 +70,8 @@ class App extends React.Component<Props> {
 
     // Set the current session on the server, so that it can assign the incoming data the correct session id
     createNewSession = async () => {
-        this.props.data.currentSession = Number(await (await fetch("/api/newsession")).text());
-        console.log(this.props.data.currentSession)
+        this.props.data.session = Number(await (await fetch("/api/newsession")).text());
+        console.log(this.props.data.session)
         this.props.data.newSessionModal = false
         this.props.data.viewState = ViewState.Recording
         this.props.data.recordBegin = Date.now() / 1000;
@@ -95,7 +98,9 @@ class App extends React.Component<Props> {
         this.accelGraph.current!.chartInstance.data.datasets[1].data = []
         this.accelGraph.current!.chartInstance.data.datasets[2].data = []
         this.accelGraph.current?.chartInstance.resetZoom();
-        this.props.data.data = [];
+        while(this.props.data.data.length > 0) {
+            this.props.data.data.pop();
+        }
     }
 
     setPanning = (state: boolean) => {
@@ -115,7 +120,7 @@ class App extends React.Component<Props> {
         this.props.data.viewState = ViewState.Viewing
 
         // Set new session
-        this.props.data.currentSession = session.id;
+        this.props.data.session = session.id;
         this.props.data.recordBegin = Math.floor(new Date(session.start).getTime()/1000);
         console.log(session.id)
 
@@ -158,7 +163,8 @@ class App extends React.Component<Props> {
                     </Nav>
                     <Navbar.Collapse className="justify-content-end">
                         <Navbar.Text>
-                        Recording: <a>2313213</a>
+                            {this.props.data.viewState == ViewState.Recording? "Recording" : "Viewing"}
+                            : <a>{this.props.data.session}</a>
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Navbar>
@@ -222,7 +228,7 @@ class App extends React.Component<Props> {
                                 yAxis="Acceleration (m/s²)"
                                 graphs={['Accel X', 'Accel Y', 'Accel Z']}
                             />
-                            <div title="Data">Tabel med alt data</div>
+                            <Table title="Data"/>
                         </GraphPanel>
                     </div>
                     <div className="Col item4"></div>
