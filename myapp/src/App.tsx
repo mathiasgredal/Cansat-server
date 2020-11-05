@@ -15,6 +15,7 @@ import Modal from './Components/Modal'
 import OldSessionList, { Session } from './Components/OldSessionList'
 import DataStore, { SensorData, ViewState } from './Stores/DataStore'
 import Table from './Components/Table'
+import Kort from './Components/Map'
 
 
 
@@ -231,7 +232,7 @@ class App extends React.Component<Props> {
                             <Table title="Data"/>
                         </GraphPanel>
                     </div>
-                    <div className="Col item4"></div>
+                    <div className="Col item4"><Kort></Kort></div>
                     <div className="Col item5"></div>
                 </div>
             </>
