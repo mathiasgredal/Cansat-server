@@ -19,6 +19,8 @@ export interface SensorData {
   accelX: number;
   accelY: number;
   accelZ: number;
+  latitude: number;
+  longitude: number;
 }
 
 export default class DataStore {
@@ -57,7 +59,9 @@ export default class DataStore {
       height: Math.random()*10,
       accelX: elem.accelx,
       accelY: elem.accely,
-      accelZ: elem.accelz
+      accelZ: elem.accelz,
+      latitude: elem.latitude,
+      longitude: elem.longitude
     }
   }
 

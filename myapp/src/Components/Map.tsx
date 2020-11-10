@@ -1,96 +1,54 @@
-
 import React from 'react'
-import ReactMapGL from 'react-map-gl';
-import {SVGOverlay} from 'react-map-gl';
+import Map from 'pigeon-maps'
+import Overlay from 'pigeon-overlay'
 
-
-import 'react-tabulator/css/tabulator_simple.css'
-import { React15Tabulator, ReactTabulator } from 'react-tabulator'
 import DataStore, { SensorData } from '../Stores/DataStore'
 import { inject, observer } from 'mobx-react'
-import { observe, reaction } from 'mobx'
 
 export interface Props {
-    title: string;
-    data?: DataStore;
+    data?: DataStore
 }
 
-export interface State { }
+function mapTilerProvider(x: number, y: number, z: number, dpr?: number) {
+    return `https://tile.osmand.net/hd/${z}/${x}/${y}.png`
+}
 
-let mapStyle = {
-    "version": 8,
-    "name": "OSM",
-    "metadata": {
-  
-    },
-    "sources": {
-      "openmaptiles": {
-        "type": "vector",
-        "url": "https://free.tilehosting.com/data/v3.json?key={key}"
-      },
-      "osm": {
-        "type": "raster",
-        "tiles": [
-          "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-        ],
-        "minzoom": 0,
-        "maxzoom": 14
-      },
-      "91y5159eg": {
-        "type": "vector",
-        "url": "https://localhost:3000/tilejson.json"
-      }
-    },
-    "sprite": "https://openmaptiles.github.io/klokantech-basic-gl-style/sprite",
-    "glyphs": "https://free.tilehosting.com/fonts/{fontstack}/{range}.pbf?key=undefined",
-    "layers": [
-      {
-        "id": "osm",
-        "type": "raster",
-        "source": "osm"
-      }
-    ],
-    "id": "klokantech-basic"
-  }
-  
-
-function redraw({project}) {
-    const [cx, cy] = project([11.332610,55.400980]);
-    return <circle cx={cx} cy={cy} r={4} fill="blue" />;
-  }
-  
+function RedDot() {
+    return (
+        <div
+            style={{
+                width: 10,
+                height: 10,
+                backgroundColor: 'red',
+                borderRadius: 5,
+            }}></div>
+    )
+}
 
 @inject('data')
 @observer
-class Kort extends React.Component<Props, State> {
-
-
+class Kort extends React.Component<Props> {
     constructor(props: Props) {
         super(props)
-
     }
-    state = {
-        viewport: {
-            width: 400,
-            height: 325,
-          latitude: 55.400980,
-          longitude: 11.332610,
-          zoom: 10
-        }
-      };
+
+    getLocation(data?: SensorData): [number, number] {
+      if(data?.latitude === undefined || data.longitude === undefined)
+        return [0, 0];
+      
+        return [Number(data.latitude), Number(data.longitude)];
+    }
+
     render() {
         return (
-            <div >
-                <ReactMapGL
-        {...this.state.viewport}
-        onViewportChange={(viewport) => this.setState({viewport})}
-        mapStyle={mapStyle}
-      >
-          <SVGOverlay redraw={redraw} />
-
-
-      </ReactMapGL>
-            </div>
+            <Map
+                center={this.getLocation(this.props.data!.data.slice(-1)[0])}
+                zoom={12}
+                provider={mapTilerProvider}>
+                <Overlay anchor={this.getLocation(this.props.data!.data.slice(-1)[0])}>
+                    <RedDot />
+                </Overlay>
+            </Map>
         )
     }
 }

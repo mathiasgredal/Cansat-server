@@ -42,7 +42,9 @@ function createTables() {
             pressure NUMERIC,
             accelX NUMERIC,
             accelY NUMERIC,
-            accelZ NUMERIC
+            accelZ NUMERIC,
+            latitude NUMERIC,
+            longitude NUMERIC
           )`);  
     
         } catch (err) {

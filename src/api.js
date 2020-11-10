@@ -10,6 +10,16 @@ const pool = new Pool({
 
 global.session = Math.floor(Math.random()*10000000)
 
+router.get("/img", async (req, res) => {
+    try {
+        res.send(`${global.img}`);
+    } catch (err) {
+        // Report errors
+        console.error(err);
+        res.send("Error " + err); 
+    }
+});
+
 router.get("/newsession", async (req, res) => {
     try {
         global.session = Math.floor(Math.random()*10000000)

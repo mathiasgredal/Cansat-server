@@ -19,12 +19,17 @@ const client = mqtt.connect(serverUrl, {
 client.on("connect", function () {
     // For right now we just listen, in the future we should also be able to send commands to the cansat
     client.subscribe("cansat_telemetry");
+    client.subscribe("CANSAT_TEST");
 });
 
 
 client.on("message", function (topic, message) {
     if(topic === 'cansat_telemetry') {
         handleTelemetry(JSON.parse(message));
+    }
+    else if (topic === "CANSAT_TEST") {
+        console.log(message.length);
+        global.img = message;
     }
 });
 
@@ -41,10 +46,12 @@ async function handleTelemetry(data) {
         const accelX = data.accelX;
         const accelY = data.accelY;
         const accelZ = data.accelZ;
+        const latitude = data.latitude;
+        const longitude = data.longitude;
+        console.log("Hello")
 
-
-        const result = await db_client.query("INSERT INTO sensordata (session, temperature, pressure, accelX, accelY, accelZ) VALUES ($1, $2, $3, $4, $5, $6)", 
-        [global.session, temperature, pressure, accelX, accelY, accelZ]);
+        const result = await db_client.query("INSERT INTO sensordata (session, temperature, pressure, accelX, accelY, accelZ, latitude, longitude) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)", 
+        [global.session, temperature, pressure, accelX, accelY, accelZ, latitude, longitude]);
 
         db_client.release();
     } catch (error) {

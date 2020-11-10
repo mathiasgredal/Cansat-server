@@ -16,8 +16,8 @@ import OldSessionList, { Session } from './Components/OldSessionList'
 import DataStore, { SensorData, ViewState } from './Stores/DataStore'
 import Table from './Components/Table'
 import Kort from './Components/Map'
-
-
+import CanSat3D from './Components/CanSat3D'
+import Telemetry from './Components/Telemetry'
 
 interface Props {
     data: DataStore
@@ -31,6 +31,8 @@ class App extends React.Component<Props> {
     højdeGraph: React.RefObject<Line> = React.createRef()
     accelGraph: React.RefObject<Line> = React.createRef()
 
+    @observable image: string = ''
+
     constructor(props: Props) {
         super(props)
         this.props.data.updateGraphs = this.updateGraphs
@@ -39,10 +41,12 @@ class App extends React.Component<Props> {
         setInterval(async () => {
             // If we are only viewing data, we should not fetch any new data
             if (this.props.data.viewState == ViewState.Viewing) return
-
+            this.image =
+                'data:image/jpeg;base64, ' +
+                (await (await fetch('/api/img')).text())
             // This fetches the data and has an unfortunate sideeffect of updating the graphs
             await this.props.data.FetchSensorData()
-        }, 100)
+        }, 500)
     }
 
     // prettier-ignore
@@ -71,14 +75,16 @@ class App extends React.Component<Props> {
 
     // Set the current session on the server, so that it can assign the incoming data the correct session id
     createNewSession = async () => {
-        this.props.data.session = Number(await (await fetch("/api/newsession")).text());
+        this.props.data.session = Number(
+            await (await fetch('/api/newsession')).text()
+        )
         console.log(this.props.data.session)
         this.props.data.newSessionModal = false
         this.props.data.viewState = ViewState.Recording
-        this.props.data.recordBegin = Date.now() / 1000;
+        this.props.data.recordBegin = Date.now() / 1000
         this.setPanning(false)
-        this.clearGraphs();
-        this.redrawGraphs();
+        this.clearGraphs()
+        this.redrawGraphs()
     }
 
     redrawGraphs = () => {
@@ -90,17 +96,17 @@ class App extends React.Component<Props> {
 
     clearGraphs = () => {
         this.tempGraph.current!.chartInstance.data.datasets[0].data = []
-        this.tempGraph.current?.chartInstance.resetZoom();
+        this.tempGraph.current?.chartInstance.resetZoom()
         this.trykGraph.current!.chartInstance.data.datasets[0].data = []
-        this.trykGraph.current?.chartInstance.resetZoom();
+        this.trykGraph.current?.chartInstance.resetZoom()
         this.højdeGraph.current!.chartInstance.data.datasets[0].data = []
-        this.højdeGraph.current?.chartInstance.resetZoom();
+        this.højdeGraph.current?.chartInstance.resetZoom()
         this.accelGraph.current!.chartInstance.data.datasets[0].data = []
         this.accelGraph.current!.chartInstance.data.datasets[1].data = []
         this.accelGraph.current!.chartInstance.data.datasets[2].data = []
-        this.accelGraph.current?.chartInstance.resetZoom();
-        while(this.props.data.data.length > 0) {
-            this.props.data.data.pop();
+        this.accelGraph.current?.chartInstance.resetZoom()
+        while (this.props.data.data.length > 0) {
+            this.props.data.data.pop()
         }
     }
 
@@ -121,34 +127,57 @@ class App extends React.Component<Props> {
         this.props.data.viewState = ViewState.Viewing
 
         // Set new session
-        this.props.data.session = session.id;
-        this.props.data.recordBegin = Math.floor(new Date(session.start).getTime()/1000);
+        this.props.data.session = session.id
+        this.props.data.recordBegin = Math.floor(
+            new Date(session.start).getTime() / 1000
+        )
         console.log(session.id)
 
         // Allow panning
-        this.setPanning(true);
+        this.setPanning(true)
 
         // Clear data
-        this.clearGraphs();
+        this.clearGraphs()
 
-        (await fetch("/api/allfromsession?session="+session.id)).json().then((response) => {
-            for(let elem of response) {
-              // We need to parse the sensordata into the SensorData structure
-              let sensordata: SensorData = this.props.data.ParseSensorData(elem);
-              this.props.data.data.push(sensordata);
+        ;(await fetch('/api/allfromsession?session=' + session.id))
+            .json()
+            .then((response) => {
+                for (let elem of response) {
+                    // We need to parse the sensordata into the SensorData structure
+                    let sensordata: SensorData = this.props.data.ParseSensorData(
+                        elem
+                    )
+                    this.props.data.data.push(sensordata)
 
-              this.tempGraph.current?.chartInstance.data.datasets[0].data.push ({x: sensordata.time, y: sensordata.temperature})
-              this.trykGraph.current?.chartInstance.data.datasets[0].data.push ({x: sensordata.time, y: sensordata.pressure})
-              this.højdeGraph.current?.chartInstance.data.datasets[0].data.push({x: sensordata.time, y: sensordata.height})
-              this.accelGraph.current?.chartInstance.data.datasets[0].data.push({x: sensordata.time, y: sensordata.accelX})
-              this.accelGraph.current?.chartInstance.data.datasets[1].data.push({x: sensordata.time, y: sensordata.accelY})
-              this.accelGraph.current?.chartInstance.data.datasets[2].data.push({x: sensordata.time, y: sensordata.accelZ})
-            }
-          }).catch((error) => {
-            throw "ERROR(fetching sensordata):" + error;
-          });
+                    this.tempGraph.current?.chartInstance.data.datasets[0].data.push(
+                        { x: sensordata.time, y: sensordata.temperature }
+                    )
+                    this.trykGraph.current?.chartInstance.data.datasets[0].data.push(
+                        { x: sensordata.time, y: sensordata.pressure }
+                    )
+                    this.højdeGraph.current?.chartInstance.data.datasets[0].data.push(
+                        { x: sensordata.time, y: sensordata.height }
+                    )
+                    this.accelGraph.current?.chartInstance.data.datasets[0].data.push(
+                        { x: sensordata.time, y: sensordata.accelX }
+                    )
+                    this.accelGraph.current?.chartInstance.data.datasets[1].data.push(
+                        { x: sensordata.time, y: sensordata.accelY }
+                    )
+                    this.accelGraph.current?.chartInstance.data.datasets[2].data.push(
+                        { x: sensordata.time, y: sensordata.accelZ }
+                    )
+                }
+            })
+            .catch((error) => {
+                throw 'ERROR(fetching sensordata):' + error
+            })
 
-        this.redrawGraphs();
+        this.redrawGraphs()
+    }
+
+    getUrl = (input) => {
+        return 'url(' + this.image + ')'
     }
 
     render() {
@@ -193,8 +222,18 @@ class App extends React.Component<Props> {
 
                 {/* Main UI Content */}
                 <div className="Container">
-                    <div className="Col item1"></div>
-                    <div className="Col item2"></div>
+                    <div className="Col item1">
+                        {/* Using a CSS Hack to fill the container wothout modifying it: https://stackoverflow.com/a/10016640 */}
+                        <div style={{ display: "flex", flex: 1,
+                               backgroundImage: "url('"+this.image+"')",
+                               backgroundSize: "contain",
+                               backgroundPosition: "center",
+                               backgroundRepeat: "no-repeat",
+                        }}></div>
+                    </div>
+                    <div className="Col item2">
+                        <CanSat3D>  </CanSat3D>
+                    </div>
                     <div className="Col item3">
                         <GraphPanel>
                             <Graph
@@ -232,8 +271,13 @@ class App extends React.Component<Props> {
                             <Table title="Data"/>
                         </GraphPanel>
                     </div>
-                    <div className="Col item4"><Kort></Kort></div>
-                    <div className="Col item5"></div>
+                    <div className="Col item4">
+                        Opportunity
+                    </div>
+                    <div className="Col item5"><Kort></Kort></div>
+                    <div className="Col item6">
+                        <Telemetry></Telemetry>
+                    </div>
                 </div>
             </>
         )
