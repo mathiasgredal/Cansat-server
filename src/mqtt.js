@@ -29,7 +29,7 @@ client.on("message", function (topic, message) {
     }
     else if (topic === "CANSAT_TEST") {
         console.log(message.length);
-        global.img = message;
+        global.img = Buffer.from(message).toString('base64');
     }
 });
 

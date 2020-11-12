@@ -1,0 +1,932 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/Stores/DataStore.ts",
+    "content": "import {observable, computed, action} from 'mobx';\nimport { Session } from '../Components/OldSessionList';\n\nfunction getTime(): number {\n  return Date.now() / 1000;\n}\n\n// Used for differentiating between viewing live data and old data\nexport enum ViewState {\n  Recording,\n  Viewing,\n}\n\nexport interface SensorData {\n  time: number;\n  temperature: number;\n  pressure: number;\n  height: number;\n  accelX: number;\n  accelY: number;\n  accelZ: number;\n  latitude: number;\n  longitude: number;\n}\n\nexport default class DataStore {\n  constructor() {\n    // Fetch the session that the server is currently configured for\n    fetch(\"/api/session\").then(async (reponse)=> {\n      this.session = Number(await reponse.text());\n      console.log(this.session)\n    })\n  }\n \n  @observable viewState: ViewState = ViewState.Recording;\n\n  // Handle modals\n  @observable newSessionModal: boolean = false;\n  @observable oldSessionModal: boolean = false;\n\n  // Telemetry\n  @observable data: SensorData[] = [];\n  @observable session: number = -1;\n\n  // Handle graphs\n  recordBegin: number = getTime();\n  lastUpdate: number = getTime();\n  updateGraphs?: (data: SensorData)=>void = undefined;\n\n  @action openNewSessionModal() {\n    this.newSessionModal = true;\n  }\n\n  ParseSensorData(elem: any): SensorData {\n    return {\n      time: new Date(elem.date).getTime()* 0.001 - this.recordBegin,\n      temperature: elem.temperature,\n      pressure: elem.pressure,\n      height: Math.random()*10,\n      accelX: elem.accelx,\n      accelY: elem.accely,\n      accelZ: elem.accelz,\n      latitude: elem.latitude,\n      longitude: elem.longitude\n    }\n  }\n\n  // Fetches any data that was added since last update\n  @action async FetchSensorData() {\n    (await fetch(\"/api/date?date=\"+this.lastUpdate)).json().then((response) => {\n      for(let elem of response) {\n        // We need to parse the sensordata into the SensorData structure\n        let sensordata: SensorData = this.ParseSensorData(elem);\n\n        // Add data to list and update graphs\n        this.data.push(sensordata);\n        if(this.updateGraphs != undefined)\n          this.updateGraphs(sensordata);\n        this.lastUpdate = getTime();\n      }\n    }).catch((error) => {\n      throw \"ERROR(fetching sensordata):\" + error;\n    });\n  }\n\n  async FetchSessionList(): Promise<Session[]> {\n    let sessions: Session[] = [];\n    let response = await (await fetch(\"/api/sessions\")).json();\n\n    for(let elem of response) {\n      let sessionData: Session = {\n        id: elem.session,\n        start: new Date(elem.min)\n      }\n      sessions.push(sessionData);\n    }\n    return sessions;\n  }\n}",
+    "static": true,
+    "longname": "/srv/docker_setup/teknikfag/myapp/src/Stores/DataStore.ts",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "__decorate",
+    "memberof": "src/Stores/DataStore.ts",
+    "static": true,
+    "longname": "src/Stores/DataStore.ts~__decorate",
+    "access": "private",
+    "export": false,
+    "importPath": "my-app/src/Stores/DataStore.ts",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "function",
+    "name": "getTime",
+    "memberof": "src/Stores/DataStore.ts",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Stores/DataStore.ts~getTime",
+    "access": "public",
+    "export": false,
+    "importPath": "my-app/src/Stores/DataStore.ts",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 4,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": [],
+    "ignore": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "class",
+    "name": "DataStore",
+    "memberof": "src/Stores/DataStore.ts",
+    "static": true,
+    "longname": "src/Stores/DataStore.ts~DataStore",
+    "access": "public",
+    "export": true,
+    "importPath": "my-app/src/Stores/DataStore.ts",
+    "importStyle": "DataStore",
+    "description": "",
+    "lineNumber": 26,
+    "interface": false
+  },
+  {
+    "__docId__": 52,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/Stores/DataStore.ts~DataStore",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Stores/DataStore.ts~DataStore#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 32,
+    "undocument": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "member",
+    "name": "viewState",
+    "memberof": "src/Stores/DataStore.ts~DataStore",
+    "static": false,
+    "longname": "src/Stores/DataStore.ts~DataStore#viewState",
+    "access": "public",
+    "description": "",
+    "lineNumber": 35,
+    "type": {
+      "nullable": null,
+      "types": [
+        "ViewState"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "member",
+    "name": "newSessionModal",
+    "memberof": "src/Stores/DataStore.ts~DataStore",
+    "static": false,
+    "longname": "src/Stores/DataStore.ts~DataStore#newSessionModal",
+    "access": "public",
+    "description": "",
+    "lineNumber": 38,
+    "type": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "member",
+    "name": "oldSessionModal",
+    "memberof": "src/Stores/DataStore.ts~DataStore",
+    "static": false,
+    "longname": "src/Stores/DataStore.ts~DataStore#oldSessionModal",
+    "access": "public",
+    "description": "",
+    "lineNumber": 39,
+    "type": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "member",
+    "name": "data",
+    "memberof": "src/Stores/DataStore.ts~DataStore",
+    "static": false,
+    "longname": "src/Stores/DataStore.ts~DataStore#data",
+    "access": "public",
+    "description": "",
+    "lineNumber": 42,
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "member",
+    "name": "session",
+    "memberof": "src/Stores/DataStore.ts~DataStore",
+    "static": false,
+    "longname": "src/Stores/DataStore.ts~DataStore#session",
+    "access": "public",
+    "description": "",
+    "lineNumber": 43,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "member",
+    "name": "recordBegin",
+    "memberof": "src/Stores/DataStore.ts~DataStore",
+    "static": false,
+    "longname": "src/Stores/DataStore.ts~DataStore#recordBegin",
+    "access": "public",
+    "description": "",
+    "lineNumber": 46,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "member",
+    "name": "lastUpdate",
+    "memberof": "src/Stores/DataStore.ts~DataStore",
+    "static": false,
+    "longname": "src/Stores/DataStore.ts~DataStore#lastUpdate",
+    "access": "public",
+    "description": "",
+    "lineNumber": 47,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "member",
+    "name": "updateGraphs",
+    "memberof": "src/Stores/DataStore.ts~DataStore",
+    "static": false,
+    "longname": "src/Stores/DataStore.ts~DataStore#updateGraphs",
+    "access": "public",
+    "description": "",
+    "lineNumber": 48,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "openNewSessionModal",
+    "memberof": "src/Stores/DataStore.ts~DataStore",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Stores/DataStore.ts~DataStore#openNewSessionModal",
+    "access": "public",
+    "description": "",
+    "lineNumber": 50,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 64,
+    "kind": "method",
+    "name": "ParseSensorData",
+    "memberof": "src/Stores/DataStore.ts~DataStore",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Stores/DataStore.ts~DataStore#ParseSensorData",
+    "access": "public",
+    "description": "",
+    "lineNumber": 54,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "undefined"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "elem",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "SensorData"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "FetchSensorData",
+    "memberof": "src/Stores/DataStore.ts~DataStore",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/Stores/DataStore.ts~DataStore#FetchSensorData",
+    "access": "public",
+    "description": "",
+    "lineNumber": 69,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "name": "FetchSessionList",
+    "memberof": "src/Stores/DataStore.ts~DataStore",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/Stores/DataStore.ts~DataStore#FetchSessionList",
+    "access": "public",
+    "description": "",
+    "lineNumber": 86,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 68,
+    "kind": "file",
+    "name": "src/Stores/index.ts",
+    "content": "import DataStore from './DataStore';\n\nconst dataStore = new DataStore();\n\nexport default {\n  data: dataStore\n};",
+    "static": true,
+    "longname": "/srv/docker_setup/teknikfag/myapp/src/Stores/index.ts",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 69,
+    "kind": "variable",
+    "name": "dataStore",
+    "memberof": "src/Stores/index.ts",
+    "static": true,
+    "longname": "src/Stores/index.ts~dataStore",
+    "access": "public",
+    "export": false,
+    "importPath": "my-app/src/Stores/index.ts",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "src/Stores/DataStore.ts~DataStore"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "kind": "index",
+    "content": "# my-app\n\nEmpty project.\n\n## Building and running on localhost\n\nFirst install dependencies:\n\n```sh\nnpm install\n```\n\nTo run in hot module reloading mode:\n\n```sh\nnpm start\n```\n\nTo create a production build:\n\n```sh\nnpm run build-prod\n```\n\n## Running\n\nOpen the file `dist/index.html` in your browser\n\n## Credits\n\nMade with [createapp.dev](https://createapp.dev/)\n\n",
+    "longname": "/srv/docker_setup/teknikfag/myapp/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"my-app\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"index.js\",\n  \"keywords\": [],\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"scripts\": {\n    \"clean\": \"rm dist/bundle.js\",\n    \"start\": \"parcel src/index.html\",\n    \"watch\": \"parcel watch src/index.html\",\n    \"build-prod\": \"parcel build src/index.html\",\n    \"docs\": \"typedoc --out ./docs ./src --mode file --tsconfig ./tsconfig.json\"\n  },\n  \"dependencies\": {\n    \"@material-ui/core\": \"^4.11.0\",\n    \"@material-ui/icons\": \"^4.9.1\",\n    \"@types/chart.js\": \"^2.9.27\",\n    \"@types/dateformat\": \"^3.0.1\",\n    \"@types/hammerjs\": \"^2.0.36\",\n    \"@types/packery\": \"^1.4.31\",\n    \"@types/react-map-gl\": \"^5.2.9\",\n    \"@types/react-reconciler\": \"^0.18.0\",\n    \"@types/react-router-dom\": \"^5.1.6\",\n    \"@types/react-virtualized\": \"^9.21.10\",\n    \"bootstrap\": \"^4.5.3\",\n    \"chart.js\": \"^2.9.3\",\n    \"chartjs-plugin-zoom\": \"^0.7.5\",\n    \"dateformat\": \"^3.0.3\",\n    \"esdoc-typescript-plugin\": \"^1.0.1\",\n    \"esdoc2\": \"^2.1.5\",\n    \"esdoc2-jsx-plugin\": \"^2.0.0\",\n    \"esdoc2-react-plugin\": \"^2.0.0\",\n    \"esdoc2-standard-plugin\": \"^2.1.2\",\n    \"esdoc2-typescript-plugin\": \"^2.0.0\",\n    \"hammerjs\": \"^2.0.8\",\n    \"jquery\": \"^3.5.1\",\n    \"mobx\": \"^5.0.2\",\n    \"mobx-react\": \"^6.0.0\",\n    \"packery\": \"^2.1.2\",\n    \"pigeon-maps\": \"^0.16.1\",\n    \"pigeon-marker\": \"^0.3.4\",\n    \"pigeon-overlay\": \"^0.2.3\",\n    \"popper.js\": \"^1.16.1\",\n    \"prop-types\": \"^15.7.2\",\n    \"react\": \"^16.14.0\",\n    \"react-bootstrap\": \"^1.4.0\",\n    \"react-cellblock\": \"^3.0.4\",\n    \"react-chartjs-2\": \"^2.10.0\",\n    \"react-dom\": \"^16.14.0\",\n    \"react-grid-layout\": \"^1.1.1\",\n    \"react-map-gl\": \"^5.2.9\",\n    \"react-resizable\": \"^1.11.0\",\n    \"react-tabulator\": \"^0.14.2\",\n    \"react-three-fiber\": \"^5.1.9\",\n    \"react-virtualized\": \"^9.22.2\",\n    \"styled-components\": \"^5.2.0\",\n    \"three\": \"^0.122.0\",\n    \"typedoc\": \"^0.19.2\"\n  },\n  \"devDependencies\": {\n    \"@babel/core\": \"^7.12.3\",\n    \"@babel/plugin-proposal-decorators\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.12.1\",\n    \"@babel/preset-react\": \"^7.12.1\",\n    \"@types/react\": \"^16.9.54\",\n    \"@types/react-dom\": \"^16.9.9\",\n    \"babel-plugin-transform-decorators-legacy\": \"^1.3.5\",\n    \"babel-plugin-transform-runtime\": \"^6.23.0\",\n    \"babel-preset-react-app\": \"^10.0.0\",\n    \"parcel-bundler\": \"^1.12.4\",\n    \"prettier\": \"^2.1.2\",\n    \"sass\": \"^1.27.0\",\n    \"typescript\": \"^4.0.5\"\n  }\n}\n",
+    "longname": "/srv/docker_setup/teknikfag/myapp/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

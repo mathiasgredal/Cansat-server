@@ -16,11 +16,21 @@ class Telemetry extends React.Component<Props> {
 
     render() {
         return (
-            <div style={{  display: "flex",
-                flexDirection: "column"}}>
-            <h4>Telemetri</h4>
-            <h4>Telemetri</h4>
-
+            <div
+                style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    flexDirection: 'column',
+                    padding: 10,
+                }}>
+                <h4>Telemetri</h4>
+                <br></br>
+                <div>
+                    <b>Battery:</b> dsadsa
+                </div>
+                <div>
+                    <b>Battery:</b> dsadsa
+                </div>
             </div>
         )
     }

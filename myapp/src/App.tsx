@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Nav, Navbar } from 'react-bootstrap'
 import { Line, defaults } from 'react-chartjs-2'
+import {ChartPoint} from 'chart.js/index'
 
 import { action, computed, observable } from 'mobx'
 import { inject, observer, Provider } from 'mobx-react'
@@ -46,18 +47,18 @@ class App extends React.Component<Props> {
                 (await (await fetch('/api/img')).text())
             // This fetches the data and has an unfortunate sideeffect of updating the graphs
             await this.props.data.FetchSensorData()
-        }, 500)
+        }, 100)
     }
 
     // prettier-ignore
-    updateGraphs = (data: SensorData) => {
+    updateGraphs = (data: SensorData): void => {
         // Push new data to graphs
-        this.tempGraph.current?.chartInstance.data.datasets[0].data.push ({x: data.time, y: data.temperature})
-        this.trykGraph.current?.chartInstance.data.datasets[0].data.push ({x: data.time, y: data.pressure})
-        this.højdeGraph.current?.chartInstance.data.datasets[0].data.push({x: data.time, y: data.height})
-        this.accelGraph.current?.chartInstance.data.datasets[0].data.push({x: data.time, y: data.accelX})
-        this.accelGraph.current?.chartInstance.data.datasets[1].data.push({x: data.time, y: data.accelY})
-        this.accelGraph.current?.chartInstance.data.datasets[2].data.push({x: data.time, y: data.accelZ})
+        this.tempGraph.current!.chartInstance.data.datasets![0].data!.push ({x: data.time, y: data.temperature})
+        this.trykGraph.current!.chartInstance.data.datasets![0].data!.push ({x: data.time, y: data.pressure})
+        this.højdeGraph.current!.chartInstance.data.datasets![0].data!.push({x: data.time, y: data.height})
+        this.accelGraph.current!.chartInstance.data.datasets![0].data!.push({x: data.time, y: data.accelX})
+        this.accelGraph.current!.chartInstance.data.datasets![1].data!.push({x: data.time, y: data.accelY})
+        this.accelGraph.current!.chartInstance.data.datasets![2].data!.push({x: data.time, y: data.accelZ})
 
         // If we have too many elements, we should remove the last ones
         if (this.props.data.data.length > 50) {
@@ -176,7 +177,7 @@ class App extends React.Component<Props> {
         this.redrawGraphs()
     }
 
-    getUrl = (input) => {
+    getUrl = (input: string) => {
         return 'url(' + this.image + ')'
     }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import Map from 'pigeon-maps'
+@hidden
 import Overlay from 'pigeon-overlay'
 
 import DataStore, { SensorData } from '../Stores/DataStore'
