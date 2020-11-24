@@ -13,7 +13,7 @@ export interface Props {
 function mapTilerProvider(x: number, y: number, z: number, dpr?: number) {
     return `https://tile.osmand.net/hd/${z}/${x}/${y}.png`
 }
-
+ 
 function RedDot() {
     return (
         <div
@@ -34,10 +34,10 @@ class Kort extends React.Component<Props> {
     }
 
     getLocation(data?: SensorData): [number, number] {
-      if(data?.latitude === undefined || data.longitude === undefined)
-        return [0, 0];
+      //if(data?.latitude === undefined || data.longitude === undefined)
+        return [55.40177624476746, 11.332504749298097]
       
-        return [Number(data.latitude), Number(data.longitude)];
+        //return [Number(data.latitude), Number(data.longitude)];
     }
 
     render() {

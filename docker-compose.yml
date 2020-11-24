@@ -36,6 +36,7 @@ services:
       - "traefik.http.routers.teknik.entrypoints=websecure"
       - 'traefik.http.routers.teknik.tls=true'
       - "traefik.http.routers.teknik.tls.certresolver=dns-cloudflare"
+#      - "traefik.http.routers.teknik.middlewares=secure-chain"
 
   db:
     image: postgres

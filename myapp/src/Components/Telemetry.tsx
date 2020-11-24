@@ -26,10 +26,16 @@ class Telemetry extends React.Component<Props> {
                 <h4>Telemetri</h4>
                 <br></br>
                 <div>
-                    <b>Battery:</b> dsadsa
+                    <b>Battery:</b> 96%
                 </div>
                 <div>
-                    <b>Battery:</b> dsadsa
+                    <b>Battery Voltage:</b> 3.96V
+                </div>
+                <div>
+                    <b>WiFi:</b> ON
+                </div>
+                <div>
+                    <b>Acceleration:</b> 9.82m/s^2
                 </div>
             </div>
         )

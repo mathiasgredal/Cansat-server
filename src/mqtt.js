@@ -40,8 +40,8 @@ async function handleTelemetry(data) {
 
         // We can pull out each important value
         const sessionID = data.session; // A sessionID is just a random UUID, used to differentiate sessions
-        const temperature = data.temperature;
-        const pressure = data.pressure;
+        const temperature = data.temperature - 10;
+        const pressure = parseInt(data.pressure) + 23850;
         const height = data.height;
         const accelX = data.accelX;
         const accelY = data.accelY;

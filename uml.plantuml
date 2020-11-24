@@ -1,0 +1,125 @@
+@startuml
+title Klassediagram af klienten
+
+class DataStore << (P,yellow) Provider>> {
+	+viewState: ViewState
+  	+newSessionModal: boolean
+  	+oldSessionModal: boolean
+  	+data: Array<SensorData>
+  	+session: number
+
+  	+recordBegin: number
+  	+lastUpdate: number
+	==methods==
+	~openNewSessionModal()
+    ~ParseSensorData(elem)
+    ~FetchSensorData() 
+    ~FetchSessionList()
+}
+
+class App << (C,red) React.Component>> {
+    +store: DataStore 
+    +tempGraph
+    +trykGraph
+    +højdeGraph
+    +accelGraph
+    +image
+    ==methods==
+    ~updateGraphs()
+    ~createNewSession()
+    ~redrawGraphs()
+    ~clearGraphs()
+    ~setPanning()
+    ~viewOldSession()
+    ~getUrl()
+    ~render()
+}
+
+class Modal  << (M,green) React.Component>> {
+    ==props==
+    +children
+    +title
+    +show
+    +buttons
+    ==methods==
+    ~onHide()
+}
+
+class OldSessionList  << (M,green) React.Component>> {
+    +sessions: Session[]
+    ==props==
+    +data: DataStore
+    ==methods==
+    ~onSelectSession()
+    ~componentWillMount()
+}
+
+class Graph << (M,blue) React.Component>> {
+    ==props==
+    +title: string
+    +graphTitle: string
+    +yAxis: string
+    +xAxis: string
+    +graphRef: React.RefObject<Line>
+    +graphs: string[]
+    ==methods==
+    ~onHide()
+}
+
+package Container {
+	class CanSat3D << (M,blue) React.Component>> {
+      +roll
+      +pitch
+      ==props==
+      +data: DataStore
+      ==methods==
+      ~calcRoll()
+      ~calcPitch()
+	}
+
+    class Kort << (M,blue) React.Component>> {
+      ==props==
+      +data: DataStore
+      ==methods==
+      ~getLocation()
+	}
+
+    class Telemetry << (M,blue) React.Component>> {
+	}
+
+    class Table << (M,blue) React.Component>> {
+      -tableRef
+      -columns
+      ==props==
+      +title: string
+      +data: DataStore
+	}
+}
+
+class NavBar {
+     //imported from bootstrap// 
+}
+
+skinparam nodesep 100
+App -[hidden]> DataStore
+DataStore |o-- App : store: DataStore
+DataStore |o-- OldSessionList : store: DataStore
+DataStore |o-- Container : store: DataStore
+DataStore -[hidden]> Container
+
+' DataStore o.. CanSat3D : store: DataStore
+' DataStore o.. Kort : store: DataStore
+' DataStore o.. Table : store: DataStore
+
+
+App <..> NavBar
+App <..> Modal
+App <..[norank]> Container
+Modal <..> OldSessionList
+App <..> GraphView  
+GraphView <..> Graph
+
+
+
+
+@enduml

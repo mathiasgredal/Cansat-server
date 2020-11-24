@@ -207,7 +207,7 @@ class App extends React.Component<Props> {
                     onHide={()=>this.props.data.newSessionModal=false}
                     buttons={[
                         { name: 'Annuller', onClick: ()=>this.props.data.newSessionModal=false},
-                        { name: 'Bekræft', onClick: this.createNewSession },
+                        { name: 'Bekræft', onClick: this.createNewSession }
                     ]}>
                     Klik bekræft hvis du vil starte en ny session. (Det er ikke
                     muligt at genstarte en tidligere session)
@@ -223,15 +223,6 @@ class App extends React.Component<Props> {
 
                 {/* Main UI Content */}
                 <div className="Container">
-                    <div className="Col item1">
-                        {/* Using a CSS Hack to fill the container wothout modifying it: https://stackoverflow.com/a/10016640 */}
-                        <div style={{ display: "flex", flex: 1,
-                               backgroundImage: "url('"+this.image+"')",
-                               backgroundSize: "contain",
-                               backgroundPosition: "center",
-                               backgroundRepeat: "no-repeat",
-                        }}></div>
-                    </div>
                     <div className="Col item2">
                         <CanSat3D>  </CanSat3D>
                     </div>
@@ -273,9 +264,17 @@ class App extends React.Component<Props> {
                         </GraphPanel>
                     </div>
                     <div className="Col item4">
-                        Opportunity
+                        <Kort></Kort>
                     </div>
-                    <div className="Col item5"><Kort></Kort></div>
+                    <div className="Col item5">
+                            {/* Using a CSS Hack to fill the container wothout modifying it: https://stackoverflow.com/a/10016640 */}
+                            <div style={{ display: "flex", flex: 1,
+                               backgroundImage: "url('"+this.image+"')",
+                               backgroundSize: "contain",
+                               backgroundPosition: "center",
+                               backgroundRepeat: "no-repeat",
+                        }}></div>
+                    </div>
                     <div className="Col item6">
                         <Telemetry></Telemetry>
                     </div>
